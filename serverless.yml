@@ -6,6 +6,8 @@ plugins:
   - serverless-offline
 
 custom:
+  serverless-offline:
+    port: 8000
  
 provider:
   name: aws
