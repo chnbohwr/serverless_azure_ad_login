@@ -1,0 +1,28 @@
+service: serverless-rest-api-with-dynamodb
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+plugins:
+  - serverless-offline
+
+custom:
+ 
+provider:
+  name: aws
+  runtime: nodejs4.3
+  
+functions:
+  login:
+    handler: src/login.landingPage
+    events:
+      - http:
+          path: login
+          method: get
+          cors: true
+  callback:
+    handler: src/callback.callback
+    events:
+      - http:
+          path: callback
+          method: get
+          cors: true
